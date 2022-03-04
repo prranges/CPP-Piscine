@@ -6,7 +6,7 @@
 /*   By: prranges <prranges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:21:39 by prranges          #+#    #+#             */
-/*   Updated: 2022/03/03 15:30:59 by prranges         ###   ########.fr       */
+/*   Updated: 2022/03/04 11:44:11 by prranges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,24 @@ void    PhoneBook::addContact()
     
     i %= 8;
     std::cout << "First name: ";
-	std::getline(std::cin, input);
+	if (!(std::getline(std::cin >> std::ws, input)))
+		exit (1);
 	this->_pb[i].setFirstName(input);
 	std::cout << "Last name: ";
-	std::getline(std::cin, input);
+	if (!(std::getline(std::cin >> std::ws, input)))
+		exit(1);
 	this->_pb[i].setLastName(input);
 	std::cout << "Nickname: ";
-	std::getline(std::cin, input);
+	if (!(std::getline(std::cin >> std::ws, input)))
+		exit(1);
 	this->_pb[i].setNickName(input);
 	std::cout << "Phone number: ";
-	std::getline(std::cin, input);
+	if (!(std::getline(std::cin >> std::ws, input)))
+		exit(1);
 	this->_pb[i].setPhoneNum(input);
 	std::cout << "Darkest secret: ";
-	std::getline(std::cin, input);
+	if (!(std::getline(std::cin >> std::ws, input)))
+		exit(1);
 	this->_pb[i].setDarkSecret(input);
     i++;
     if (this->_pbSize != 8)
@@ -49,7 +54,6 @@ void    PhoneBook::searchContact() const
 		std::cout << "Phonebook is empty." << std::endl;
 		return;
 	}
-
 
 	for (unsigned int i = 0; i < this->_pbSize; i++)
     {

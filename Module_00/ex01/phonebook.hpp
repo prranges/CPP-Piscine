@@ -6,14 +6,14 @@
 /*   By: prranges <prranges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:21:55 by prranges          #+#    #+#             */
-/*   Updated: 2022/03/03 12:19:06 by prranges         ###   ########.fr       */
+/*   Updated: 2022/03/04 11:50:36 by prranges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
-#include <string> // duh..
+#include <string> //string
 #include <sstream> // istringstream
 #include <iostream> // cout
 #include <iomanip> // setw
@@ -52,8 +52,8 @@ class PhoneBook
     PhoneBook();
     ~PhoneBook();
     
-    void    addContact();
-    void    searchContact() const;
+    void        addContact();
+    void        searchContact() const;
 
     private:
     std::string const	_formatContact(std::string const row) const;
