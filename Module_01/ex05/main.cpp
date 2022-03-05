@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prranges <prranges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 14:48:55 by prranges          #+#    #+#             */
-/*   Updated: 2022/03/05 15:09:58 by prranges         ###   ########.fr       */
+/*   Created: 2022/03/05 10:16:47 by prranges          #+#    #+#             */
+/*   Updated: 2022/03/05 14:03:40 by prranges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Karen.hpp"
 
-#include <iostream>
-#include <string>
-
-class Zombie
+int main()
 {
-    private:
-        std::string _name;
+    Karen karen;
 
-    public:
-        Zombie();
-        ~Zombie(void);
-
-        void announce(void);
-        void setName(std::string name);
-};
-
-Zombie* zombieHorde(int N, std::string name);
-
-#endif
+    karen.complain("DEBUG");
+    karen.complain("INFO");
+    karen.complain("WARNING");
+    karen.complain("ERROR");
+    
+    return (0);
+}

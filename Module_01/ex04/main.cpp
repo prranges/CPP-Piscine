@@ -6,7 +6,7 @@
 /*   By: prranges <prranges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:06:20 by prranges          #+#    #+#             */
-/*   Updated: 2022/03/04 20:16:38 by prranges         ###   ########.fr       */
+/*   Updated: 2022/03/05 15:14:17 by prranges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,42 @@ int main(int ac, char **av)
 {
     if (ac != 4)
     {
-        std::cerr << "Error: Use 4 arguments." << std::endl;
+        std::cerr << "Error: Use 3 arguments." << std::endl;
         return (1);
     }
     
+	std::ifstream inFile(av[1]);
+	std::string fileNameIn = av[1];
 	std::string	s1 = av[2];
 	std::string	s2 = av[3];
-	std::string filename = av[1];
-	std::string	line;
-	std::ifstream inf(av[1]);
+	std::string	input;
 	
-    if (!inf)
+    if (!inFile)
 	{
-		std::cout << "Error: Input file" << std::endl;
+		std::cerr << "Error: Input file" << std::endl;
 		return (1);
 	}
-	std::ofstream outf(filename.append(".replace").c_str(), std::ofstream::trunc);
-	if (!outf)
+	
+	std::string	fileNameOut = fileNameIn + ".replace";
+	std::ofstream outFile;
+	outFile.open(fileNameOut, std::ios::out | std::ios::trunc);
+	
+	if (!outFile)
 	{
-		std::cout << "Error: Output file" << std::endl;
+		std::cerr << "Error: Output file" << std::endl;
 		return (1);
 	}
-	while (getline(inf, line))
+	while (getline(inFile, input))
 	{
 		size_t pos = 0;
-		while ((pos = line.find(s1)) != std::string::npos)
+		while ((pos = input.find(s1)) != std::string::npos)
 		{
-			line.erase(pos, s1.size());
-			line.insert(pos, s2);
+			input.erase(pos, s1.size());
+			input.insert(pos, s2);
 		}
-		outf << line << std::endl;
+		outFile << input << std::endl;
 	}
-	inf.close();
-	outf.close();
+	inFile.close();
+	outFile.close();
 	return (0);
 }

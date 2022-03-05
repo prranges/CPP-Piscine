@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prranges <prranges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 14:48:55 by prranges          #+#    #+#             */
-/*   Updated: 2022/03/05 15:09:58 by prranges         ###   ########.fr       */
+/*   Created: 2022/03/05 10:16:47 by prranges          #+#    #+#             */
+/*   Updated: 2022/03/05 15:06:16 by prranges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Karen.hpp"
 
-#include <iostream>
-#include <string>
-
-class Zombie
+int main(int ac, char **av)
 {
-    private:
-        std::string _name;
+    Karen karen;
 
-    public:
-        Zombie();
-        ~Zombie(void);
-
-        void announce(void);
-        void setName(std::string name);
-};
-
-Zombie* zombieHorde(int N, std::string name);
-
-#endif
+    if (ac != 2)
+    {
+        std::cerr << "Error: Use 1 argument!" << std::endl;
+        return (1);
+    }
+    
+    karen.complain(av[1]);
+    
+    return (0);
+}
