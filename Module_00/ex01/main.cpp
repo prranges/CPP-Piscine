@@ -6,7 +6,7 @@
 /*   By: prranges <prranges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:12:35 by prranges          #+#    #+#             */
-/*   Updated: 2022/03/04 11:34:56 by prranges         ###   ########.fr       */
+/*   Updated: 2022/03/06 10:12:23 by prranges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void)
     while (1)
     {
         std::cout << "Enter a command (ADD, SEARCH or EXIT)" << std::endl;
-        if ((std::getline(std::cin, command)))
+        if (!(std::getline(std::cin, command)))
             exit (0);
         // if (command == "")
             // exit (0);
