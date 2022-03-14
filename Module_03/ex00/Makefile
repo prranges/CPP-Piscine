@@ -6,11 +6,11 @@
 #    By: prranges <prranges@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 17:22:58 by prranges          #+#    #+#              #
-#    Updated: 2022/03/10 17:50:33 by prranges         ###   ########.fr        #
+#    Updated: 2022/03/11 17:18:16 by prranges         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= clap_trap
+NAME		= claptrap
 
 SRCS		= main.cpp \
 			  ClapTrap.cpp
