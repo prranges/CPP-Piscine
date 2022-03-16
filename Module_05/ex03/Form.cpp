@@ -6,13 +6,13 @@
 /*   By: prranges <prranges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:11:11 by prranges          #+#    #+#             */
-/*   Updated: 2022/03/15 17:33:17 by prranges         ###   ########.fr       */
+/*   Updated: 2022/03/16 11:14:17 by prranges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form()
+Form::Form() : _name("unknown"), _gradeToSign(150), _gradeToExec(150)
 {}
 
 Form::Form(std::string name, int gradeToSign, int gradeToExec) : _name(name), _signStatus(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
@@ -79,6 +79,11 @@ const char *Form::GradeTooHighException::what() const throw()
 const char *Form::GradeTooLowException::what() const throw()
 {
     return ("grade is too low");
+}
+
+const char *Form::notSigned::what() const throw()
+{
+    return ("Form is not signed");
 }
 
 std::ostream &operator<< (std::ostream &out, Form const &form)

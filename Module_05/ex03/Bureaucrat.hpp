@@ -6,7 +6,7 @@
 /*   By: prranges <prranges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 18:22:54 by prranges          #+#    #+#             */
-/*   Updated: 2022/03/15 13:10:53 by prranges         ###   ########.fr       */
+/*   Updated: 2022/03/16 11:14:14 by prranges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -32,6 +35,9 @@ class Bureaucrat
 
         void upGrade();
         void downGrade();
+
+        void signForm(Form &form);
+        void executeForm(Form &form);
 	    
         Bureaucrat &operator= (const Bureaucrat &bureaucrat);
 

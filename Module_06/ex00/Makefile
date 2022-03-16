@@ -6,14 +6,13 @@
 #    By: prranges <prranges@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 18:23:00 by prranges          #+#    #+#              #
-#    Updated: 2022/03/15 14:16:35 by prranges         ###   ########.fr        #
+#    Updated: 2022/03/16 13:29:52 by prranges         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= bureaucrat
+NAME		= conversion
 
-SRCS		= main.cpp \
-			  Bureaucrat.cpp
+SRCS		= main.cpp
 
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98

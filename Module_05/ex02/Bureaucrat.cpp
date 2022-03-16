@@ -6,7 +6,7 @@
 /*   By: prranges <prranges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 18:22:51 by prranges          #+#    #+#             */
-/*   Updated: 2022/03/15 13:10:53 by prranges         ###   ########.fr       */
+/*   Updated: 2022/03/15 19:37:21 by prranges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,34 @@ std::string Bureaucrat::getName() const
 int Bureaucrat::getGrade() const
 {
     return (_grade);
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+    if (form.getSignStatus())
+        std::cout << "Exeption: Form " << form.getName() << " already signed" << std::endl;
+    else
+        {
+            try
+            {
+                form.beSigned(*this);
+                std::cout << this->getName() << " sign " << form.getName() << " form" << std::endl;
+            }
+            catch(const std::exception &e)
+            {
+                std::cerr << "Exeption: " << this->getName() << " can't sign " << form.getName() << " becouse " << this->getName() << "'s " << e.what() << std::endl;
+            }
+            
+        }
+        
+}
+
+void Bureaucrat::executeForm(Form &form)
+{
+    if (!form.getSignStatus())
+		throw Form::notSigned();
+    form.execute(*this);
+    std::cout << this->getName() << " execute " << form.getName() << " form" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator= (const Bureaucrat &bureaucrat)
