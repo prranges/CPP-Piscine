@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prranges <prranges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 13:30:28 by prranges          #+#    #+#             */
-/*   Updated: 2022/03/17 11:35:03 by prranges         ###   ########.fr       */
+/*   Created: 2022/03/17 17:50:58 by prranges          #+#    #+#             */
+/*   Updated: 2022/03/18 12:12:06 by prranges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conversion.hpp"
+#ifndef A_HPP
+# define A_HPP
 
-int main(int ac, char **av)
+#include "Base.hpp"
+
+class A : public Base
 {
+    public:
+        A();
+        virtual ~A();
+};
 
-	if (ac == 2)
-	{
-		Conversion num(av[1]);
-		std::cout << num << std::endl;
-	}
-	else
-		std::cout << "Error arguments" << std::endl;
-	return 0;
-}
+#endif

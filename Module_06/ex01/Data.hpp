@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prranges <prranges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 13:30:28 by prranges          #+#    #+#             */
-/*   Updated: 2022/03/17 11:35:03 by prranges         ###   ########.fr       */
+/*   Created: 2022/03/17 17:25:12 by prranges          #+#    #+#             */
+/*   Updated: 2022/03/17 17:26:24 by prranges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conversion.hpp"
+#ifndef DATA_HPP
+# define DATA_HPP
 
-int main(int ac, char **av)
+#include <iostream>
+
+struct Data
 {
+    std::string name;
+    int         age;
+    char        sex; 
+};
 
-	if (ac == 2)
-	{
-		Conversion num(av[1]);
-		std::cout << num << std::endl;
-	}
-	else
-		std::cout << "Error arguments" << std::endl;
-	return 0;
-}
+#endif

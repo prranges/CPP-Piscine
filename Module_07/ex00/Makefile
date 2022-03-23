@@ -5,15 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: prranges <prranges@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/14 18:23:00 by prranges          #+#    #+#              #
-#    Updated: 2022/03/17 13:02:42 by prranges         ###   ########.fr        #
+#    Created: 2022/03/21 11:30:47 by d1ma5             #+#    #+#              #
+#    Updated: 2022/03/23 09:59:31 by prranges         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= convert
+NAME		= templates
 
-SRCS		= main.cpp \
-			  Conversion.cpp
+SRCS		= main.cpp
 
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -34,7 +33,7 @@ $(OBJS_DIR):
 $(OBJS_DIR)/%.o: %.cpp Makefile $(OBJS_DIR)
 	$(CC) $(CFLAGS) $(HDR) -c $< -o $@
 
-$(NAME): $(OBJS) ./Conversion.hpp
+$(NAME): $(OBJS) ./whatever.hpp
 	$(CC) $(OBJS) -o $@
 
 clean:

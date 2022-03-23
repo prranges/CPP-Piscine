@@ -5,15 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: prranges <prranges@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/14 18:23:00 by prranges          #+#    #+#              #
-#    Updated: 2022/03/17 13:02:42 by prranges         ###   ########.fr        #
+#    Created: 2022/03/17 17:50:41 by prranges          #+#    #+#              #
+#    Updated: 2022/03/17 17:53:07 by prranges         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= convert
+NAME		=  identify
 
 SRCS		= main.cpp \
-			  Conversion.cpp
+			  Base.cpp \
+			  A.cpp \
+			  B.cpp \
+			  C.cpp
 
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -34,7 +37,7 @@ $(OBJS_DIR):
 $(OBJS_DIR)/%.o: %.cpp Makefile $(OBJS_DIR)
 	$(CC) $(CFLAGS) $(HDR) -c $< -o $@
 
-$(NAME): $(OBJS) ./Conversion.hpp
+$(NAME): $(OBJS) ./Base.hpp ./A.cpp ./B.cpp ./C.cpp
 	$(CC) $(OBJS) -o $@
 
 clean:

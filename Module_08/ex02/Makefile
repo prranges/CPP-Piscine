@@ -5,15 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: prranges <prranges@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/14 18:23:00 by prranges          #+#    #+#              #
-#    Updated: 2022/03/17 13:02:42 by prranges         ###   ########.fr        #
+#    Created: 2022/03/23 11:23:57 by prranges          #+#    #+#              #
+#    Updated: 2022/03/23 11:26:59 by prranges         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= convert
+NAME		= mutantstack
 
-SRCS		= main.cpp \
-			  Conversion.cpp
+SRCS		= main.cpp
 
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -34,7 +33,7 @@ $(OBJS_DIR):
 $(OBJS_DIR)/%.o: %.cpp Makefile $(OBJS_DIR)
 	$(CC) $(CFLAGS) $(HDR) -c $< -o $@
 
-$(NAME): $(OBJS) ./Conversion.hpp
+$(NAME): $(OBJS) ./MutantStack.hpp
 	$(CC) $(OBJS) -o $@
 
 clean:
